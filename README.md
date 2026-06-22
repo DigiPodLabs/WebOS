@@ -2,8 +2,6 @@
 
 A browser-native desktop environment built with React, TypeScript and Vite.
 
-![WebOS Screenshot](./screenshots/desktop.png)
-
 ## Overview
 
 WebOS 24.04 LTS is a modern Linux-inspired desktop environment that runs entirely inside the browser.
