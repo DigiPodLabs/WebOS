@@ -11,6 +11,9 @@ export default function LoginScreen() {
   const login = useSystemStore((s) => s.login);
   const user = useSystemStore((s) => s.user);
   const wallpaper = useSettingsStore((s) => s.wallpaper);
+  const avatarSrc = user.avatar.startsWith('/')
+    ? `${import.meta.env.BASE_URL}${user.avatar.slice(1)}`
+    : user.avatar;
   const timeFormat = useSettingsStore((s) => s.timeFormat);
 
   useEffect(() => {
@@ -72,7 +75,7 @@ export default function LoginScreen() {
         {/* Avatar */}
         <div className="mb-3">
           <img
-            src={user.avatar}
+            src={avatarSrc}
             alt="User"
             className="w-20 h-20 rounded-full object-cover"
             style={{ border: '2px solid rgba(125,139,150,0.3)', boxShadow: '0 0 20px rgba(125,139,150,0.1)' }}
